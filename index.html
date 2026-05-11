@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gayatri Jyothishalayam — Sidhanti Sri Sivaprasad | Astrology &amp; Vastu, Ongole</title>
+  <meta name="description" content="Sidhanti Sri Sivaprasad — 40+ years of expertise in South Indian Vedic Astrology, Vastu Shastra, Match Making, Muhurtham and Numerology. Ongole, AP." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔱</text></svg>" />
+  <style>
+/* ═══════════════════════════════════════════════════════════════
+   GAYATRI JYOTHISHALAYAM — Dual Mode Homepage
+   Dark: Deep Galaxy · Cosmic Cinzel · Atma Lingam
+   Light: Blush Rose · Cormorant · Gayatri Devi
+═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Lato:wght@300;400;700&family=Noto+Serif+Telugu:wght@400;600;700&display=swap');
+
+/* ── CSS Custom Properties ── */
+:root {
+  --bg:          #080B1A;
+  --bg2:         #0D1030;
+  --bg3:         #060818;
+  --gold:        #C9A84C;
+  --gold-dim:    rgba(201,168,76,0.12);
+  --gold-glow:   rgba(201,168,76,0.30);
+  --accent:      #C9A84C;
+  --text-h:      #F0E8FF;
+  --text:        rgba(240,232,255,0.72);
+  --text-muted:  rgba(240,232,255,0.38);
+  --border:      rgba(201,168,76,0.10);
+  --border-soft: rgba(201,168,76,0.06);
+  --font-h:      'Cinzel', serif;
+  --font-b:      'Crimson Text', serif;
+  --font-tel:    'Noto Serif Telugu', serif;
+  --btn-r:       0px;
+  --marquee-bg:  rgba(8,11,26,0.97);
+  --stats-bg:    #060818;
+  --section-alt: rgba(13,16,48,0.70);
+}
+
+[data-theme="light"] {
+  --bg:          #FDF6F7;
+  --bg2:         #F5E8EC;
+  --bg3:         #EED8DE;
+  --gold:        #D4A843;
+  --gold-dim:    rgba(212,168,67,0.12);
+  --gold-glow:   rgba(212,168,67,0.25);
+  --accent:      #B76E79;
+  --text-h:      #2A0A1A;
+  --text:        rgba(42,10,26,0.82);
+  --text-muted:  rgba(42,10,26,0.52);
+  --border:      rgba(183,110,121,0.18);
+  --border-soft: rgba(183,110,121,0.08);
+  --font-h:      'Cormorant Garamond', serif;
+  --font-b:      'Lato', sans-serif;
+  --btn-r:       50px;
+  --marquee-bg:  #8A3A50;
+  --stats-bg:    #3D1A4A;
+  --section-alt: #F5E8EC;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-b);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background 0.5s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ── Galaxy Background (dark only) ── */
+[data-theme="dark"] body {
+  background:
+    /* Milky Way diffuse band — diagonal sweep */
+    linear-gradient(122deg, transparent 12%, rgba(80,55,185,0.07) 28%, rgba(145,105,255,0.11) 46%, rgba(80,55,185,0.07) 64%, transparent 80%),
+    /* Pink/magenta nebula — upper right */
+    radial-gradient(ellipse 44% 30% at 91% 9%, rgba(210,0,130,0.45) 0%, transparent 54%),
+    /* Teal nebula — mid right */
+    radial-gradient(ellipse 36% 30% at 70% 54%, rgba(0,148,168,0.30) 0%, transparent 55%),
+    /* Violet nebula — upper left (main) */
+    radial-gradient(ellipse 82% 58% at 5% 13%, rgba(105,0,185,0.82) 0%, transparent 52%),
+    /* Deep cobalt nebula — lower right */
+    radial-gradient(ellipse 72% 58% at 96% 87%, rgba(0,18,148,0.85) 0%, transparent 50%),
+    /* Amber nebula — lower left */
+    radial-gradient(ellipse 30% 22% at 3% 92%, rgba(148,72,0,0.38) 0%, transparent 50%),
+    /* Core purple haze — centre */
+    radial-gradient(ellipse 55% 44% at 50% 52%, rgba(65,0,125,0.40) 0%, transparent 60%),
+    /* Faint sapphire accent — top centre-right */
+    radial-gradient(ellipse 28% 20% at 76% 17%, rgba(0,55,170,0.34) 0%, transparent 52%),
+    #080B1A;
+  background-attachment: fixed;
+}
+
+/* ── Star layer (JS populated) ── */
+#star-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* ── Gayatri Devi (light only) ── */
+.gayatri-wrap {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  width: min(85vw, 580px);
+  opacity: 0.55;
+  transition: opacity 0.6s ease;
+}
+[data-theme="dark"] .gayatri-wrap { opacity: 0; }
+
+/* ── Powder canvas ── */
+#powder-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+[data-theme="dark"] #powder-canvas { opacity: 0; }
+
+/* ── Type ── */
+h1, h2, h3, h4 { font-family: var(--font-h); line-height: 1.2; color: var(--text-h); transition: color 0.4s; }
+h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 700; letter-spacing: 0.03em; }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.6rem); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+h3 { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+h4 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+
+.body-text { font-family: var(--font-b); font-size: 1.05rem; line-height: 1.85; color: var(--text); }
+.editorial { font-family: var(--font-b); font-style: italic; font-size: 1.2rem; line-height: 1.75; color: var(--text); }
+.telugu { font-family: var(--font-tel) !important; }
+.eyebrow {
+  font-family: var(--font-h); font-size: 0.58rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; opacity: 0.7; }
+
+/* ── Container ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.section { padding: 6rem 0; }
+.section-alt { background: var(--section-alt); }
+
+/* ── Divider ── */
+.rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 1.5rem 0; opacity: 0.5;
+}
+
+/* ── Section Header ── */
+.section-header { margin-bottom: 4rem; }
+.section-header.centered { text-align: center; }
+.section-header h2 { margin: 0.5rem 0; }
+.section-header.centered .eyebrow { justify-content: center; }
+.section-header .rule { max-width: 240px; }
+.section-header.centered .rule { margin-left: auto; margin-right: auto; }
+.section-header .subtext { font-family: var(--font-b); font-size: 1rem; color: var(--text-muted); margin-top: 0.75rem; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-h); font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 0.9rem 2rem; cursor: pointer; border: none;
+  border-radius: var(--btn-r);
+  transition: all 0.25s ease;
+}
+.btn-gold { background: var(--gold); color: #080B1A; }
+.btn-gold:hover { filter: brightness(1.15); transform: translateY(-2px); box-shadow: 0 8px 28px var(--gold-glow); }
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-whatsapp { background: #25D366; color: #fff; border-radius: var(--btn-r); }
+.btn-whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
+.btn-accent { background: var(--accent); color: #FDF6F7; border-radius: var(--btn-r); }
+.btn-accent:hover { filter: brightness(1.12); transform: translateY(-2px); }
+
+/* ══════════════════════════════════════════
+   TOPBAR
+══════════════════════════════════════════ */
+.topbar {
+  background: rgba(8,11,26,0.97);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 0.45rem 0;
+  font-family: var(--font-h); font-size: 0.6rem; letter-spacing: 0.1em;
+  transition: background 0.5s;
+}
+[data-theme="light"] .topbar {
+  background: #3D1A4A;
+  border-bottom-color: rgba(183,110,121,0.2);
+}
+.topbar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+.topbar-left, .topbar-right { display: flex; gap: 1.5rem; }
+.topbar a, .topbar span { color: rgba(240,232,255,0.55); transition: color 0.2s; }
+.topbar a:hover { color: var(--gold); }
+.topbar-item { display: flex; align-items: center; gap: 0.4rem; }
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(8,11,26,0.88);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  transition: background 0.5s, border-color 0.4s;
+}
+[data-theme="light"] .site-header {
+  background: rgba(253,246,247,0.90);
+  border-bottom-color: rgba(183,110,121,0.2);
+}
+.navbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+
+.logo { display: flex; align-items: center; gap: 1rem; }
+.logo-sym { font-size: 1.8rem; line-height: 1; }
+.logo-rule { width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); opacity: 0.5; }
+.logo-text { display: flex; flex-direction: column; }
+.logo-name { font-family: var(--font-h); font-size: 0.95rem; font-weight: 700; color: var(--text-h); letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.2; }
+.logo-sub { font-family: var(--font-tel); font-size: 0.68rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+.nav-list { display: flex; align-items: center; gap: 0.2rem; }
+.nav-item { position: relative; }
+.nav-link {
+  font-family: var(--font-h); font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);
+  padding: 0.5rem 0.85rem; display: block; transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active { color: var(--gold); }
+.nav-link.active::after {
+  content: ''; position: absolute; bottom: -1px; left: 0.85rem; right: 0.85rem;
+  height: 1px; background: var(--gold); opacity: 0.7;
+}
+
+.dropdown {
+  display: none; position: absolute; top: calc(100% + 4px); left: 0;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  min-width: 210px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.nav-item:hover .dropdown { display: block; }
+.dropdown a {
+  display: block; padding: 0.7rem 1.2rem;
+  font-family: var(--font-h); font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
+  border-bottom: 1px solid var(--border-soft); transition: all 0.2s;
+}
+.dropdown a:last-child { border-bottom: none; }
+.dropdown a:hover { color: var(--gold); padding-left: 1.6rem; background: var(--border-soft); }
+
+.nav-cta { margin-left: 0.75rem; }
+
+/* Theme toggle in nav */
+.theme-toggle {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg2);
+  color: var(--text-h); font-size: 17px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.3s, background 0.3s, transform 0.2s;
+  margin-left: 0.6rem; flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--gold); transform: scale(1.1); }
+[data-theme="dark"]  .theme-toggle .t-sun  { display: none; }
+[data-theme="dark"]  .theme-toggle .t-moon { display: inline; }
+[data-theme="light"] .theme-toggle .t-sun  { display: inline; }
+[data-theme="light"] .theme-toggle .t-moon { display: none; }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.4rem; }
+.hamburger span { display: block; width: 24px; height: 1.5px; background: var(--text-h); transition: all 0.3s; }
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero {
+  min-height: 88vh;
+  display: grid; grid-template-columns: 1fr 1px 1fr;
+  position: relative; overflow: hidden;
+}
+
+/* Atma Lingam (dark mode) */
+.lingam-wrap {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  width: min(65vw, 400px);
+  opacity: 0.015;
+  transition: opacity 0.35s ease;
+}
+[data-theme="light"] .lingam-wrap { opacity: 0 !important; }
+
+/* Spotlight punch-hole overlay */
+#hero-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 200px at var(--mx, 50%) var(--my, 50%),
+    transparent 0%,
+    rgba(8,11,26,0.92) 100%
+  );
+}
+[data-theme="light"] #hero-spotlight { opacity: 0; }
+
+.hero-vr { background: var(--border); z-index: 2; }
+
+.hero-left {
+  padding: 7rem 3rem 6rem max(2rem, calc((100vw - 1200px)/2 + 2rem));
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 2;
+}
+.hero-right {
+  padding: 7rem max(2rem, calc((100vw - 1200px)/2 + 2rem)) 6rem 3rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 2;
+}
+
+.hero-eyebrow { margin-bottom: 2.2rem; }
+.hero-title {
+  font-family: var(--font-h); font-weight: 700;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  letter-spacing: 0.03em; line-height: 1.0;
+  color: var(--text-h); margin-bottom: 0.2rem;
+}
+.hero-title-sub {
+  font-family: var(--font-b); font-style: italic; font-weight: 400;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem); color: var(--gold);
+  line-height: 1.15; display: block; margin-bottom: 1.2rem;
+}
+[data-theme="light"] .hero-title-sub { color: #B76E79; }
+
+.hero-telugu {
+  font-family: var(--font-tel); font-size: 1.15rem;
+  color: var(--text-muted); margin-bottom: 1.6rem; line-height: 1.9;
+}
+.hero-desc {
+  border-left: 2px solid var(--gold);
+  padding-left: 1.25rem;
+  font-family: var(--font-b); font-style: italic; font-size: 1.15rem;
+  color: var(--text); line-height: 1.8; margin-bottom: 2.5rem; max-width: 460px;
+  opacity: 0.85;
+}
+[data-theme="light"] .hero-desc { border-left-color: #B76E79; }
+.hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.hero-stats {
+  display: flex; gap: 2.5rem; margin-top: 3.5rem;
+  padding-top: 2.5rem; border-top: 1px solid var(--border);
+}
+.hero-stat-num {
+  font-family: var(--font-h); font-size: 2rem; font-weight: 700;
+  color: var(--gold); line-height: 1;
+}
+.hero-stat-label { font-family: var(--font-h); font-size: 0.52rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.3rem; }
+
+.hero-services-label { margin-bottom: 2rem; }
+.hero-services-list { display: flex; flex-direction: column; }
+.hero-service-row {
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 1rem 0; border-bottom: 1px solid var(--border-soft);
+  transition: padding-left 0.25s;
+}
+.hero-service-row:hover { padding-left: 0.5rem; }
+.hero-service-row:last-child { border-bottom: none; }
+.hero-srv-num {
+  font-family: var(--font-h); font-size: 1.5rem; font-weight: 700;
+  color: var(--gold-dim); line-height: 1; min-width: 36px;
+  transition: color 0.25s;
+}
+.hero-service-row:hover .hero-srv-num { color: var(--gold); opacity: 0.55; }
+.hero-srv-body { flex: 1; }
+.hero-srv-name { font-family: var(--font-h); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-h); }
+.hero-srv-telugu { font-family: var(--font-tel); font-size: 0.68rem; color: var(--text-muted); margin-top: 0.1rem; }
+.hero-srv-arrow { color: var(--gold); font-size: 1rem; opacity: 0; transition: opacity 0.25s; }
+.hero-service-row:hover .hero-srv-arrow { opacity: 1; }
+
+/* ══════════════════════════════════════════
+   MARQUEE
+══════════════════════════════════════════ */
+.marquee-strip {
+  background: var(--marquee-bg);
+  padding: 0.75rem 0; overflow: hidden;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  position: relative; z-index: 3;
+}
+.marquee-track {
+  display: flex; gap: 0; width: max-content;
+  animation: marquee 30s linear infinite;
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-item {
+  font-family: var(--font-h); font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(240,232,255,0.45);
+  padding: 0 2.5rem; white-space: nowrap; display: flex; align-items: center; gap: 2.5rem;
+}
+.marquee-item::after { content: '✦'; color: var(--gold); font-size: 0.6rem; opacity: 0.6; }
+
+/* ══════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════ */
+.about-grid { display: grid; grid-template-columns: 1fr 2px 1.4fr; gap: 5rem; align-items: center; }
+.about-vr { background: linear-gradient(to bottom, transparent, var(--gold), transparent); opacity: 0.3; }
+
+.about-photo-frame {
+  position: relative; aspect-ratio: 3/4; max-width: 340px;
+  border: 1px solid var(--border); background: var(--bg2);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.about-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.about-photo-placeholder {
+  font-size: 5rem; opacity: 0.15;
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+}
+.about-photo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--bg3);
+  border-top: 1px solid var(--border);
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-h); font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);
+  text-align: center;
+}
+.about-years-badge {
+  position: absolute; top: -1.2rem; right: -1.2rem;
+  width: 84px; height: 84px; border-radius: 50%;
+  background: var(--gold); color: #080B1A;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-family: var(--font-h); text-align: center;
+  box-shadow: 0 8px 28px var(--gold-glow);
+}
+.about-years-num { font-size: 1.4rem; font-weight: 700; line-height: 1; }
+.about-years-text { font-size: 0.46rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8; margin-top: 0.15rem; line-height: 1.4; }
+
+.about-content h2 { margin: 0.5rem 0 1rem; }
+.about-content .editorial { margin-bottom: 1.25rem; }
+.about-content .body-text { margin-bottom: 1rem; }
+
+.about-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.75rem 0; }
+.fact-item {
+  padding: 1rem; background: var(--bg2);
+  border: 1px solid var(--border-soft);
+  border-left: 2px solid var(--gold);
+}
+.fact-label { font-family: var(--font-h); font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; opacity: 0.8; }
+.fact-value { font-family: var(--font-b); font-size: 0.92rem; color: var(--text-h); font-weight: 600; }
+
+/* ══════════════════════════════════════════
+   STATS BAND
+══════════════════════════════════════════ */
+.stats-band { background: var(--stats-bg); padding: 4rem 0; }
+.stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat-col {
+  text-align: center; padding: 2rem;
+  border-right: 1px solid var(--border-soft);
+}
+.stat-col:last-child { border-right: none; }
+.stat-number {
+  font-family: var(--font-h); font-size: 3.2rem; font-weight: 700;
+  color: var(--gold); line-height: 1; letter-spacing: -0.01em;
+}
+.stat-rule { width: 28px; height: 1px; background: var(--gold); margin: 0.75rem auto; opacity: 0.4; }
+.stat-label { font-family: var(--font-h); font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
+
+/* ══════════════════════════════════════════
+   SERVICES
+══════════════════════════════════════════ */
+.services-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); }
+.service-entry {
+  padding: 2.5rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 0.75rem;
+  transition: background 0.25s;
+  position: relative; overflow: hidden;
+  background: transparent;
+}
+.service-entry:nth-child(2n) { border-right: none; }
+.service-entry:nth-last-child(-n+2) { border-bottom: none; }
+.service-entry:hover { background: var(--bg2); }
+.service-entry::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.service-entry:hover::before { transform: scaleX(1); }
+.srv-num-label { font-family: var(--font-h); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.45; }
+.srv-title { font-family: var(--font-h); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-h); }
+.srv-telugu { font-family: var(--font-tel); font-size: 0.9rem; color: var(--gold); opacity: 0.85; }
+.srv-desc { font-family: var(--font-b); font-size: 0.93rem; color: var(--text-muted); line-height: 1.8; }
+.srv-footer {
+  display: flex; justify-content: flex-end; align-items: center;
+  margin-top: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--border-soft);
+}
+.srv-link {
+  font-family: var(--font-h); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); display: flex; align-items: center; gap: 0.4rem;
+  transition: gap 0.2s, opacity 0.2s; opacity: 0.7;
+}
+.srv-link:hover { gap: 0.7rem; opacity: 1; }
+
+/* ══════════════════════════════════════════
+   HOW TO CONSULT
+══════════════════════════════════════════ */
+.steps-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.step-item {
+  padding: 3rem 2.5rem;
+  border-right: 1px solid var(--border-soft);
+  position: relative;
+}
+.step-item:last-child { border-right: none; }
+.step-connector {
+  position: absolute; top: 3rem; right: 0; width: 1px; height: 36px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: 0.4;
+}
+.step-num {
+  font-family: var(--font-h); font-size: 3.8rem; font-weight: 700;
+  color: var(--gold); opacity: 0.08; line-height: 1; margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.step-item h3 { color: var(--text-h); margin-bottom: 0.75rem; font-size: 0.75rem; }
+.step-item .body-text { font-size: 0.92rem; }
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════════════ */
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-soft); }
+.testimonial-item { background: var(--bg); padding: 2.5rem; position: relative; }
+[data-theme="light"] .testimonial-item { background: var(--bg2); }
+.t-quote-mark {
+  font-family: var(--font-b); font-size: 5rem; line-height: 0.6;
+  color: var(--gold); opacity: 0.08;
+  position: absolute; top: 2rem; left: 2rem;
+}
+.t-stars { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.t-text { font-family: var(--font-b); font-style: italic; font-size: 1rem; line-height: 1.85; color: var(--text); margin-bottom: 1.5rem; position: relative; }
+.t-author { display: flex; align-items: center; gap: 0.75rem; border-top: 1px solid var(--border-soft); padding-top: 1rem; }
+.t-avatar {
+  width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gold); color: #080B1A;
+  font-family: var(--font-h); font-weight: 700; font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.t-name { font-family: var(--font-h); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-h); }
+.t-location { font-family: var(--font-h); font-size: 0.52rem; letter-spacing: 0.1em; color: var(--text-muted); }
+
+/* ══════════════════════════════════════════
+   AREAS
+══════════════════════════════════════════ */
+.areas-flex { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+.area-chip {
+  font-family: var(--font-h); font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.5rem 1rem; border: 1px solid var(--border); color: var(--text-muted);
+  background: transparent; transition: all 0.2s; cursor: default;
+}
+.area-chip:hover, .area-chip.primary { background: var(--gold); color: #080B1A; border-color: var(--gold); }
+
+/* ══════════════════════════════════════════
+   CTA BAND
+══════════════════════════════════════════ */
+.cta-band {
+  background: linear-gradient(140deg, rgba(40,0,100,0.95) 0%, rgba(8,11,26,0.98) 100%);
+  padding: 7rem 0; text-align: center; position: relative; overflow: hidden;
+}
+[data-theme="light"] .cta-band {
+  background: linear-gradient(140deg, #3D1A4A 0%, #8A3A50 100%);
+}
+.cta-band::before {
+  content: 'ॐ'; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28vw; color: rgba(201,168,76,0.03);
+  font-family: serif; pointer-events: none; user-select: none;
+}
+.cta-band h2 { color: var(--text-h); position: relative; }
+.cta-rule { height: 1px; max-width: 160px; margin: 1.5rem auto; background: linear-gradient(to right, transparent, rgba(201,168,76,0.4), transparent); }
+.cta-telugu { font-family: var(--font-tel); font-size: 1.15rem; color: rgba(240,232,255,0.65); margin-bottom: 1rem; position: relative; }
+.cta-desc { font-family: var(--font-b); font-size: 1.1rem; font-style: italic; color: rgba(240,232,255,0.65); max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.85; position: relative; }
+.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.site-footer { background: #04060F; color: var(--text-muted); }
+[data-theme="light"] .site-footer { background: #1A0A20; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem;
+  padding: 5rem 0 3.5rem; border-bottom: 1px solid rgba(201,168,76,0.06);
+}
+.footer-brand-name { font-family: var(--font-h); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #F0E8FF; }
+.footer-brand-telugu { font-family: var(--font-tel); font-size: 0.7rem; color: rgba(240,232,255,0.2); margin-top: 0.15rem; }
+.footer-brand-desc { font-family: var(--font-b); font-size: 0.88rem; color: rgba(240,232,255,0.28); line-height: 1.85; margin: 1.2rem 0; }
+.footer-col-label { font-family: var(--font-h); font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.8; margin-bottom: 1.2rem; }
+.footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-links a { font-family: var(--font-h); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(240,232,255,0.25); transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-contact-row { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.9rem; }
+.footer-contact-icon { color: var(--gold); flex-shrink: 0; margin-top: 0.1rem; font-size: 0.85rem; opacity: 0.75; }
+.footer-contact-text { font-family: var(--font-b); font-size: 0.85rem; color: rgba(240,232,255,0.28); }
+.footer-contact-text a { color: rgba(240,232,255,0.28); transition: color 0.2s; }
+.footer-contact-text a:hover { color: var(--gold); }
+.footer-bottom {
+  padding: 1.2rem 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+  font-family: var(--font-h); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,232,255,0.15);
+}
+
+/* ── WhatsApp Float ── */
+.wa-float {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 9000;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: #25D366; color: #fff; font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.40);
+  transition: all 0.25s;
+}
+.wa-float:hover { background: #128C7E; transform: scale(1.1); }
+.wa-float::after {
+  content: 'WhatsApp'; position: absolute; right: 66px; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.85); color: #fff; padding: 0.3rem 0.7rem;
+  font-family: var(--font-h); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase;
+  white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s;
+}
+.wa-float:hover::after { opacity: 1; }
+
+/* ── Fade-up ── */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-vr { display: none; }
+  .about-photo-frame { max-width: 280px; aspect-ratio: 1/1; }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-list {
+    display: none; flex-direction: column; align-items: stretch;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 1rem;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    gap: 0;
+  }
+  .nav-list.open { display: flex; }
+  .nav-cta { margin-left: 0; }
+  .dropdown { position: static; border: none; box-shadow: none; background: var(--bg3); }
+  .nav-item:hover .dropdown { display: none; }
+  .nav-item.open .dropdown { display: block; }
+
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-vr { display: none; }
+  .hero-left { padding: 4rem 1.5rem 2rem; }
+  .hero-right { padding: 2rem 1.5rem 4rem; }
+  .lingam-wrap { width: min(80vw, 280px); }
+
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .services-layout { grid-template-columns: 1fr; }
+  .service-entry { border-right: none; }
+  .service-entry:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .service-entry:last-child { border-bottom: none; }
+  .steps-layout { grid-template-columns: 1fr; }
+  .step-item { border-right: none; border-bottom: 1px solid var(--border-soft); padding: 2.5rem 1.5rem; }
+  .step-item:last-child { border-bottom: none; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .topbar .container { flex-direction: column; gap: 0.25rem; }
+  .cta-actions { flex-direction: column; align-items: center; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Fixed bg layers -->
+  <div id="star-layer" aria-hidden="true"></div>
+
+  <!-- Gayatri Devi watermark (light mode) -->
+  <div class="gayatri-wrap" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 580" fill="none">
+      <defs>
+        <radialGradient id="gSkin" cx="50%" cy="38%" r="62%"><stop offset="0%" stop-color="#E8C4A0"/><stop offset="100%" stop-color="#C8906A"/></radialGradient>
+        <linearGradient id="gSaree" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C85060"/><stop offset="100%" stop-color="#9E3848"/></linearGradient>
+        <radialGradient id="gHalo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(218,170,55,0.52)"/><stop offset="60%" stop-color="rgba(218,170,55,0.16)"/><stop offset="100%" stop-color="rgba(218,170,55,0)"/></radialGradient>
+        <radialGradient id="gPetal" cx="50%" cy="72%" r="60%"><stop offset="0%" stop-color="#F0B8C0"/><stop offset="100%" stop-color="#D07888"/></radialGradient>
+        <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E8C040"/><stop offset="100%" stop-color="#B88A20"/></linearGradient>
+      </defs>
+
+      <!-- Outer mandala rings -->
+      <circle cx="200" cy="265" r="188" stroke="rgba(218,170,55,0.20)" stroke-width="1.5" stroke-dasharray="8 5"/>
+      <circle cx="200" cy="265" r="176" stroke="rgba(218,170,55,0.10)" stroke-width="0.7" stroke-dasharray="3 8"/>
+      <!-- 8-petal mandala -->
+      <g fill="rgba(218,170,55,0.07)" stroke="rgba(218,170,55,0.14)" stroke-width="0.8">
+        <ellipse cx="200" cy="77" rx="11" ry="21"/><ellipse cx="200" cy="77" rx="11" ry="21" transform="rotate(45 200 265)"/>
+        <ellipse cx="200" cy="77" rx="11" ry="21" transform="rotate(90 200 265)"/><ellipse cx="200" cy="77" rx="11" ry="21" transform="rotate(135 200 265)"/>
+        <ellipse cx="200" cy="77" rx="11" ry="21" transform="rotate(180 200 265)"/><ellipse cx="200" cy="77" rx="11" ry="21" transform="rotate(225 200 265)"/>
+        <ellipse cx="200" cy="77" rx="11" ry="21" transform="rotate(270 200 265)"/><ellipse cx="200" cy="77" rx="11" ry="21" transform="rotate(315 200 265)"/>
+      </g>
+
+      <!-- Halo behind main head -->
+      <circle cx="200" cy="198" r="70" fill="url(#gHalo)"/>
+      <circle cx="200" cy="198" r="66" stroke="rgba(218,170,55,0.38)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <circle cx="200" cy="198" r="57" stroke="rgba(218,170,55,0.20)" stroke-width="0.8" stroke-dasharray="2 5"/>
+      <g stroke="rgba(218,170,55,0.18)" stroke-width="1" stroke-linecap="round">
+        <line x1="200" y1="128" x2="200" y2="114"/><line x1="249" y1="149" x2="258" y2="140"/>
+        <line x1="270" y1="198" x2="284" y2="198"/><line x1="249" y1="247" x2="258" y2="256"/>
+        <line x1="200" y1="268" x2="200" y2="282"/><line x1="151" y1="247" x2="142" y2="256"/>
+        <line x1="130" y1="198" x2="116" y2="198"/><line x1="151" y1="149" x2="142" y2="140"/>
+      </g>
+
+      <!-- Lotus seat — 12 petals -->
+      <g fill="url(#gPetal)" stroke="rgba(175,90,100,0.35)" stroke-width="0.8" opacity="0.85">
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(-90 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(-60 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(-30 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(0 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(30 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(60 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(90 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(120 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(150 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(180 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(210 200 500)"/>
+        <ellipse cx="200" cy="500" rx="19" ry="34" transform="rotate(240 200 500)"/>
+      </g>
+      <ellipse cx="200" cy="500" rx="28" ry="15" fill="rgba(220,168,50,0.68)" stroke="rgba(195,145,35,0.55)" stroke-width="1.2"/>
+      <circle cx="200" cy="499" r="3" fill="rgba(195,140,35,0.80)"/>
+      <circle cx="192" cy="503" r="2" fill="rgba(195,140,35,0.68)"/><circle cx="208" cy="503" r="2" fill="rgba(195,140,35,0.68)"/>
+      <!-- Stem -->
+      <path d="M200 515 Q198 535 200 548" stroke="rgba(95,138,75,0.52)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+      <!-- Body / saree -->
+      <path d="M148 478 Q132 396 140 320 Q148 272 200 267 Q252 272 260 320 Q268 396 252 478 Z" fill="url(#gSaree)" stroke="rgba(165,70,82,0.40)" stroke-width="1.2"/>
+      <path d="M150 478 Q134 397 142 320 Q150 274 200 269" stroke="rgba(218,170,55,0.55)" stroke-width="2" fill="none"/>
+      <path d="M250 478 Q266 397 258 320 Q250 274 200 269" stroke="rgba(218,170,55,0.55)" stroke-width="2" fill="none"/>
+      <path d="M162 346 Q170 354 168 386 Q165 412 160 432" stroke="rgba(255,218,215,0.22)" stroke-width="1.2" fill="none"/>
+      <path d="M238 346 Q230 354 232 386 Q235 412 240 432" stroke="rgba(255,218,215,0.22)" stroke-width="1.2" fill="none"/>
+      <path d="M163 360 Q200 368 237 360" stroke="rgba(218,170,55,0.72)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Blouse -->
+      <path d="M160 286 Q162 268 200 265 Q238 268 240 286 Q235 302 200 304 Q165 302 160 286 Z" fill="rgba(152,52,65,0.68)" stroke="rgba(165,70,82,0.35)" stroke-width="0.8"/>
+
+      <!-- 10 Arms -->
+      <g fill="none" stroke-linecap="round">
+        <path d="M155 285 C128 268 104 253 78 230" stroke="rgba(212,148,98,0.82)" stroke-width="5"/>
+        <path d="M149 303 C118 290 93 284 66 282" stroke="rgba(212,148,98,0.80)" stroke-width="5"/>
+        <path d="M147 321 C116 323 92 330 66 337" stroke="rgba(212,148,98,0.77)" stroke-width="5"/>
+        <path d="M150 339 C124 353 103 370 86 387" stroke="rgba(212,148,98,0.74)" stroke-width="5"/>
+        <path d="M157 353 C136 374 122 395 108 415" stroke="rgba(212,148,98,0.72)" stroke-width="5"/>
+        <path d="M245 285 C272 268 296 253 322 230" stroke="rgba(212,148,98,0.82)" stroke-width="5"/>
+        <path d="M251 303 C282 290 307 284 334 282" stroke="rgba(212,148,98,0.80)" stroke-width="5"/>
+        <path d="M253 321 C284 323 308 330 334 337" stroke="rgba(212,148,98,0.77)" stroke-width="5"/>
+        <path d="M250 339 C276 353 297 370 314 387" stroke="rgba(212,148,98,0.74)" stroke-width="5"/>
+        <path d="M243 353 C264 374 278 395 292 415" stroke="rgba(212,148,98,0.72)" stroke-width="5"/>
+      </g>
+      <!-- Bangles -->
+      <g fill="none" stroke="rgba(218,170,55,0.78)" stroke-width="2">
+        <circle cx="80" cy="232" r="5"/><circle cx="66" cy="282" r="5"/><circle cx="68" cy="337" r="5"/>
+        <circle cx="86" cy="387" r="5"/><circle cx="110" cy="413" r="5"/>
+        <circle cx="320" cy="232" r="5"/><circle cx="334" cy="282" r="5"/><circle cx="332" cy="337" r="5"/>
+        <circle cx="314" cy="387" r="5"/><circle cx="290" cy="413" r="5"/>
+      </g>
+
+      <!-- Symbolic items in hands -->
+      <!-- L1: Lotus -->
+      <circle cx="76" cy="228" r="9" fill="rgba(228,128,138,0.88)" stroke="rgba(190,90,100,0.65)" stroke-width="1"/>
+      <path d="M71 228 Q76 220 81 228 Q76 225 71 228 Z" fill="rgba(208,98,112,0.82)"/>
+      <!-- L2: Kamandalu -->
+      <path d="M58 273 Q58 266 65 264 Q72 264 74 267 Q76 274 74 283 Q72 289 65 289 Q58 289 58 282 Z" fill="rgba(218,170,55,0.84)" stroke="rgba(185,140,35,0.65)" stroke-width="1"/>
+      <path d="M65 264 Q65 258 67 255" stroke="rgba(185,140,35,0.65)" stroke-width="1.5" fill="none"/>
+      <!-- L3: Book/Vedas -->
+      <rect x="56" y="329" width="20" height="14" rx="2" fill="rgba(230,175,55,0.84)" stroke="rgba(195,140,35,0.65)" stroke-width="1"/>
+      <line x1="66" y1="329" x2="66" y2="343" stroke="rgba(195,140,35,0.50)" stroke-width="0.8"/>
+      <line x1="58" y1="333" x2="76" y2="333" stroke="rgba(195,140,35,0.38)" stroke-width="0.5"/>
+      <line x1="58" y1="337" x2="76" y2="337" stroke="rgba(195,140,35,0.38)" stroke-width="0.5"/>
+      <!-- L4: Mala/Rosary -->
+      <circle cx="84" cy="382" r="3.5" fill="rgba(172,102,112,0.82)"/><circle cx="90" cy="378" r="3" fill="rgba(172,102,112,0.78)"/>
+      <circle cx="96" cy="382" r="3" fill="rgba(172,102,112,0.78)"/><circle cx="98" cy="390" r="3.5" fill="rgba(172,102,112,0.82)"/>
+      <!-- L5: Open hand (abhaya) -->
+      <ellipse cx="108" cy="413" rx="7" ry="9" fill="rgba(212,148,98,0.75)" stroke="rgba(182,118,72,0.50)" stroke-width="1"/>
+      <!-- R1: Lotus -->
+      <circle cx="324" cy="228" r="9" fill="rgba(228,128,138,0.88)" stroke="rgba(190,90,100,0.65)" stroke-width="1"/>
+      <path d="M319 228 Q324 220 329 228 Q324 225 319 228 Z" fill="rgba(208,98,112,0.82)"/>
+      <!-- R2: Varada mudra -->
+      <ellipse cx="334" cy="280" rx="7" ry="9" fill="rgba(212,148,98,0.75)" stroke="rgba(182,118,72,0.50)" stroke-width="1"/>
+      <!-- R3: Conch/Shankha -->
+      <path d="M324 328 Q328 321 336 323 Q343 328 340 337 Q337 342 329 341 Q321 339 322 333 Z" fill="rgba(244,238,215,0.90)" stroke="rgba(208,192,152,0.65)" stroke-width="1"/>
+      <path d="M334 321 Q336 314 339 318" stroke="rgba(208,192,152,0.60)" stroke-width="1.5" fill="none"/>
+      <!-- R4: Chakra -->
+      <circle cx="314" cy="385" r="10" fill="none" stroke="rgba(218,170,55,0.82)" stroke-width="2"/>
+      <circle cx="314" cy="385" r="5" fill="none" stroke="rgba(218,170,55,0.60)" stroke-width="1.5"/>
+      <circle cx="314" cy="385" r="2.5" fill="rgba(218,170,55,0.78)"/>
+      <g stroke="rgba(218,170,55,0.52)" stroke-width="1">
+        <line x1="314" y1="375" x2="314" y2="395"/><line x1="304" y1="385" x2="324" y2="385"/>
+        <line x1="307" y1="378" x2="321" y2="392"/><line x1="321" y1="378" x2="307" y2="392"/>
+      </g>
+      <!-- R5: Flame/Agni -->
+      <path d="M286 408 Q290 397 294 404 Q298 394 296 410 Q293 418 290 418 Q285 416 286 408 Z" fill="rgba(228,128,38,0.82)" stroke="rgba(195,98,22,0.62)" stroke-width="1"/>
+      <path d="M289 412 Q290 405 292 409" fill="rgba(248,198,48,0.78)" stroke="none"/>
+
+      <!-- Neck -->
+      <path d="M186 254 Q200 260 214 254 L215 270 Q200 276 185 270 Z" fill="url(#gSkin)" stroke="rgba(182,122,72,0.28)" stroke-width="0.5"/>
+      <!-- Necklace -->
+      <path d="M179 262 Q200 276 221 262" stroke="rgba(218,170,55,0.88)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="200" cy="276" r="5.5" fill="url(#gGold)" stroke="rgba(182,142,32,0.70)" stroke-width="1"/>
+      <circle cx="200" cy="276" r="2.5" fill="rgba(192,52,62,0.88)"/>
+      <path d="M183 266 Q200 280 217 266" stroke="rgba(218,170,55,0.52)" stroke-width="1.2" fill="none"/>
+
+      <!-- ── MAIN CENTRAL HEAD ── -->
+      <ellipse cx="200" cy="200" rx="33" ry="38" fill="url(#gSkin)" stroke="rgba(182,122,72,0.38)" stroke-width="1.2"/>
+      <path d="M169 184 Q200 172 231 184 Q220 179 200 178 Q180 179 169 184 Z" fill="rgba(40,20,10,0.72)"/>
+      <!-- Eyebrows -->
+      <path d="M182 186 Q191 181 200 184" stroke="rgba(52,28,15,0.90)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M200 184 Q209 181 218 186" stroke="rgba(52,28,15,0.90)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Eye whites -->
+      <path d="M182 194 Q191 188 200 194 Q191 199 182 194 Z" fill="rgba(244,238,225,0.94)"/>
+      <path d="M200 194 Q209 188 218 194 Q209 199 200 194 Z" fill="rgba(244,238,225,0.94)"/>
+      <!-- Iris + pupil -->
+      <circle cx="191" cy="194" r="3.8" fill="rgba(52,32,18,0.92)"/><circle cx="209" cy="194" r="3.8" fill="rgba(52,32,18,0.92)"/>
+      <circle cx="192" cy="193" r="1.4" fill="rgba(255,255,255,0.60)"/><circle cx="210" cy="193" r="1.4" fill="rgba(255,255,255,0.60)"/>
+      <!-- Kohl liner + flick -->
+      <path d="M181 194 Q191 190 201 194" stroke="rgba(22,8,2,0.75)" stroke-width="1.2" fill="none"/>
+      <path d="M199 194 Q209 190 219 194" stroke="rgba(22,8,2,0.75)" stroke-width="1.2" fill="none"/>
+      <path d="M182 194 L178 198" stroke="rgba(22,8,2,0.62)" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <path d="M218 194 L222 198" stroke="rgba(22,8,2,0.62)" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <!-- Nose -->
+      <path d="M196 203 Q200 209 204 203" stroke="rgba(158,102,62,0.55)" stroke-width="1.2" fill="none"/>
+      <ellipse cx="195" cy="205" rx="2" ry="1.3" fill="rgba(158,102,62,0.45)"/>
+      <ellipse cx="205" cy="205" rx="2" ry="1.3" fill="rgba(158,102,62,0.45)"/>
+      <circle cx="193" cy="205" r="2.5" fill="none" stroke="rgba(218,170,55,0.78)" stroke-width="1"/>
+      <!-- Lips -->
+      <path d="M189 214 Q195 209 200 210 Q205 209 211 214 Q207 220 200 220 Q193 220 189 214 Z" fill="rgba(192,78,88,0.90)"/>
+      <path d="M189 214 Q200 212 211 214" stroke="rgba(165,55,65,0.58)" stroke-width="0.8" fill="none"/>
+      <!-- Bindi -->
+      <circle cx="200" cy="181" r="4.2" fill="rgba(192,52,62,0.94)"/>
+      <circle cx="200" cy="181" r="1.8" fill="rgba(238,198,48,0.82)"/>
+      <!-- Earrings -->
+      <circle cx="167" cy="206" r="7" fill="url(#gGold)" stroke="rgba(182,142,32,0.70)" stroke-width="1.2"/>
+      <circle cx="167" cy="206" r="3.2" fill="rgba(192,52,62,0.90)"/>
+      <line x1="167" y1="213" x2="167" y2="222" stroke="rgba(218,170,55,0.72)" stroke-width="1.5"/>
+      <circle cx="167" cy="224" r="3.2" fill="url(#gGold)"/>
+      <circle cx="233" cy="206" r="7" fill="url(#gGold)" stroke="rgba(182,142,32,0.70)" stroke-width="1.2"/>
+      <circle cx="233" cy="206" r="3.2" fill="rgba(192,52,62,0.90)"/>
+      <line x1="233" y1="213" x2="233" y2="222" stroke="rgba(218,170,55,0.72)" stroke-width="1.5"/>
+      <circle cx="233" cy="224" r="3.2" fill="url(#gGold)"/>
+
+      <!-- ── LEFT HEAD 1 (close) ── -->
+      <ellipse cx="162" cy="220" rx="20" ry="25" fill="url(#gSkin)" stroke="rgba(182,122,72,0.28)" stroke-width="0.9"/>
+      <path d="M146 210 Q162 202 178 210 Q170 207 162 206 Q154 207 146 210 Z" fill="rgba(40,20,10,0.62)"/>
+      <path d="M154 214 Q162 210 170 214" stroke="rgba(52,28,15,0.78)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="157" cy="219" rx="2.8" ry="2.2" fill="rgba(244,238,225,0.90)"/><ellipse cx="167" cy="219" rx="2.8" ry="2.2" fill="rgba(244,238,225,0.90)"/>
+      <circle cx="157" cy="219" r="1.8" fill="rgba(52,32,18,0.88)"/><circle cx="167" cy="219" r="1.8" fill="rgba(52,32,18,0.88)"/>
+      <circle cx="162" cy="210" r="2.5" fill="rgba(192,52,62,0.82)"/>
+      <path d="M157 229 Q162 233 167 229" fill="rgba(192,78,88,0.78)" stroke="none"/>
+      <!-- ── RIGHT HEAD 1 (close) ── -->
+      <ellipse cx="238" cy="220" rx="20" ry="25" fill="url(#gSkin)" stroke="rgba(182,122,72,0.28)" stroke-width="0.9"/>
+      <path d="M222 210 Q238 202 254 210 Q246 207 238 206 Q230 207 222 210 Z" fill="rgba(40,20,10,0.62)"/>
+      <path d="M230 214 Q238 210 246 214" stroke="rgba(52,28,15,0.78)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="233" cy="219" rx="2.8" ry="2.2" fill="rgba(244,238,225,0.90)"/><ellipse cx="243" cy="219" rx="2.8" ry="2.2" fill="rgba(244,238,225,0.90)"/>
+      <circle cx="233" cy="219" r="1.8" fill="rgba(52,32,18,0.88)"/><circle cx="243" cy="219" r="1.8" fill="rgba(52,32,18,0.88)"/>
+      <circle cx="238" cy="210" r="2.5" fill="rgba(192,52,62,0.82)"/>
+      <path d="M233 229 Q238 233 243 229" fill="rgba(192,78,88,0.78)" stroke="none"/>
+      <!-- ── LEFT HEAD 2 (far) ── -->
+      <ellipse cx="132" cy="237" rx="15" ry="19" fill="url(#gSkin)" stroke="rgba(182,122,72,0.22)" stroke-width="0.7"/>
+      <path d="M120 228 Q132 221 144 228 Q138 225 132 224 Q126 225 120 228 Z" fill="rgba(40,20,10,0.52)"/>
+      <ellipse cx="127" cy="235" rx="2.2" ry="1.8" fill="rgba(244,238,225,0.85)"/><ellipse cx="137" cy="235" rx="2.2" ry="1.8" fill="rgba(244,238,225,0.85)"/>
+      <circle cx="127" cy="235" r="1.5" fill="rgba(52,32,18,0.82)"/><circle cx="137" cy="235" r="1.5" fill="rgba(52,32,18,0.82)"/>
+      <circle cx="132" cy="225" r="2" fill="rgba(192,52,62,0.72)"/>
+      <!-- ── RIGHT HEAD 2 (far) ── -->
+      <ellipse cx="268" cy="237" rx="15" ry="19" fill="url(#gSkin)" stroke="rgba(182,122,72,0.22)" stroke-width="0.7"/>
+      <path d="M256 228 Q268 221 280 228 Q274 225 268 224 Q262 225 256 228 Z" fill="rgba(40,20,10,0.52)"/>
+      <ellipse cx="263" cy="235" rx="2.2" ry="1.8" fill="rgba(244,238,225,0.85)"/><ellipse cx="273" cy="235" rx="2.2" ry="1.8" fill="rgba(244,238,225,0.85)"/>
+      <circle cx="263" cy="235" r="1.5" fill="rgba(52,32,18,0.82)"/><circle cx="273" cy="235" r="1.5" fill="rgba(52,32,18,0.82)"/>
+      <circle cx="268" cy="225" r="2" fill="rgba(192,52,62,0.72)"/>
+
+      <!-- ── CROWN / MUKUTA ── -->
+      <path d="M168 164 Q200 157 232 164 Q228 160 200 158 Q172 160 168 164 Z" fill="rgba(218,170,55,0.82)" stroke="rgba(185,142,32,0.65)" stroke-width="0.5"/>
+      <path d="M168 164 Q184 140 200 134 Q216 140 232 164" stroke="rgba(218,170,55,0.82)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M174 160 Q190 144 200 140 Q210 144 226 160" stroke="rgba(218,170,55,0.52)" stroke-width="1.2" fill="none" stroke-dasharray="3 3"/>
+      <ellipse cx="200" cy="128" rx="9" ry="11" fill="url(#gGold)" stroke="rgba(182,142,32,0.72)" stroke-width="1"/>
+      <circle cx="200" cy="120" r="4.2" fill="url(#gGold)" stroke="rgba(182,142,32,0.62)" stroke-width="0.8"/>
+      <circle cx="200" cy="117" r="2.2" fill="rgba(192,52,62,0.92)"/>
+      <circle cx="178" cy="146" r="5.5" fill="url(#gGold)" stroke="rgba(182,142,32,0.65)" stroke-width="1"/>
+      <circle cx="178" cy="146" r="2.5" fill="rgba(192,52,62,0.88)"/>
+      <circle cx="222" cy="146" r="5.5" fill="url(#gGold)" stroke="rgba(182,142,32,0.65)" stroke-width="1"/>
+      <circle cx="222" cy="146" r="2.5" fill="rgba(192,52,62,0.88)"/>
+      <path d="M164 162 L157 149 L170 157 Z" fill="rgba(218,170,55,0.78)"/>
+      <path d="M236 162 L243 149 L230 157 Z" fill="rgba(218,170,55,0.78)"/>
+      <path d="M172 170 Q200 165 228 170" stroke="rgba(218,170,55,0.72)" stroke-width="1.8" fill="none"/>
+      <g stroke="rgba(218,170,55,0.62)" stroke-width="1" fill="none">
+        <path d="M168 176 L162 184 L162 194"/><path d="M232 176 L238 184 L238 194"/>
+      </g>
+      <circle cx="162" cy="196" r="2.5" fill="url(#gGold)"/><circle cx="238" cy="196" r="2.5" fill="url(#gGold)"/>
+
+      <!-- Armlets -->
+      <path d="M145 300 Q152 296 159 300" stroke="rgba(218,170,55,0.72)" stroke-width="2" fill="none"/>
+      <path d="M241 300 Q248 296 255 300" stroke="rgba(218,170,55,0.72)" stroke-width="2" fill="none"/>
+
+      <!-- ── SWAN (Hamsa vahana) ── -->
+      <path d="M155 552 Q200 538 245 552 Q230 566 200 570 Q170 566 155 552 Z" fill="rgba(244,241,230,0.75)" stroke="rgba(208,192,158,0.55)" stroke-width="1"/>
+      <path d="M210 541 Q218 523 222 509 Q226 495 220 485" stroke="rgba(244,241,230,0.78)" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M207 541 Q215 523 219 509 Q223 495 217 485" stroke="rgba(195,180,148,0.38)" stroke-width="1" fill="none"/>
+      <circle cx="218" cy="481" r="11" fill="rgba(244,241,230,0.80)" stroke="rgba(208,192,158,0.55)" stroke-width="1"/>
+      <path d="M226 478 Q238 477 236 482 Q228 485 222 481 Z" fill="rgba(218,170,55,0.84)" stroke="rgba(182,142,32,0.62)" stroke-width="0.8"/>
+      <circle cx="221" cy="478" r="2.5" fill="rgba(32,15,5,0.88)"/>
+      <circle cx="222" cy="477" r="1" fill="rgba(255,255,255,0.62)"/>
+      <path d="M160 551 Q178 537 215 541 Q188 549 166 558 Z" fill="rgba(238,236,222,0.58)" stroke="rgba(208,192,158,0.38)" stroke-width="0.8"/>
+      <path d="M163 554 Q180 543 212 544" stroke="rgba(195,180,148,0.32)" stroke-width="0.8" fill="none"/>
+      <path d="M163 558 Q180 549 210 550" stroke="rgba(195,180,148,0.28)" stroke-width="0.8" fill="none"/>
+      <path d="M240 559 Q250 549 256 556 Q248 564 240 563 Z" fill="rgba(238,236,222,0.62)" stroke="rgba(208,192,158,0.38)" stroke-width="0.8"/>
+    </svg>
+  </div>
+
+  <!-- Powder canvas (light mode) -->
+  <canvas id="powder-canvas"></canvas>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span class="topbar-item">📍 Ongole, Andhra Pradesh</span>
+        <span class="topbar-item">⏰ Mon–Sat: 9 AM – 7 PM IST</span>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:+91XXXXXXXXXX" class="topbar-item">📞 +91-XXXX-XXXXXX</a>
+        <a href="https://wa.me/91XXXXXXXXXX" class="topbar-item">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <span class="logo-sym">🔱</span>
+          <div class="logo-rule"></div>
+          <div class="logo-text">
+            <span class="logo-name">Gayatri Jyothishalayam</span>
+            <span class="logo-sub telugu">గాయత్రీ జ్యోతిష్యాలయం</span>
+          </div>
+        </a>
+        <ul class="nav-list" id="navList">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Services ▾</a>
+            <div class="dropdown">
+              <a href="astrology.html">⭐ &nbsp;Vedic Astrology</a>
+              <a href="vastu.html">🏛 &nbsp;Vastu Shastra</a>
+              <a href="matchmaking.html">💍 &nbsp;Match Making</a>
+              <a href="muhurtham.html">🗓 &nbsp;Muhurtham</a>
+              <a href="numerology.html">🔢 &nbsp;Numerology</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item nav-cta"><a href="contact.html" class="btn btn-gold">Book Consultation</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="t-moon">☽</span>
+          <span class="t-sun">☀</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+
+    <!-- Atma Lingam (dark mode) -->
+    <div class="lingam-wrap" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" fill="none">
+        <defs>
+          <radialGradient id="lbody" cx="50%" cy="38%" r="55%">
+            <stop offset="0%"   stop-color="rgba(255,253,248,0.96)"/>
+            <stop offset="55%"  stop-color="rgba(245,240,230,0.55)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <radialGradient id="lglow" cx="50%" cy="28%" r="45%">
+            <stop offset="0%"   stop-color="rgba(255,255,255,0.60)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <radialGradient id="lpitha" cx="50%" cy="30%" r="55%">
+            <stop offset="0%"   stop-color="rgba(220,200,170,0.65)"/>
+            <stop offset="100%" stop-color="rgba(180,155,120,0.18)"/>
+          </radialGradient>
+          <radialGradient id="lhalo" cx="50%" cy="40%" r="50%">
+            <stop offset="0%"   stop-color="rgba(201,168,76,0.12)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <filter id="lglow2">
+            <feGaussianBlur stdDeviation="18" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+        </defs>
+        <ellipse cx="150" cy="195" rx="110" ry="160" fill="url(#lhalo)" filter="url(#lglow2)" opacity="0.6"/>
+        <ellipse cx="150" cy="360" rx="98" ry="32" fill="url(#lpitha)"/>
+        <ellipse cx="150" cy="188" rx="88" ry="148" fill="url(#lbody)"/>
+        <ellipse cx="150" cy="168" rx="52" ry="88" fill="url(#lglow)" opacity="0.7"/>
+        <ellipse cx="150" cy="68" rx="22" ry="34" fill="rgba(255,255,255,0.55)"/>
+        <ellipse cx="150" cy="48" rx="12" ry="16" fill="rgba(255,253,248,0.80)"/>
+        <rect x="148" y="0" width="4" height="52" rx="2" fill="rgba(255,255,255,0.25)"/>
+      </svg>
+    </div>
+
+    <!-- Spotlight overlay -->
+    <div id="hero-spotlight" aria-hidden="true"></div>
+
+    <!-- Left content -->
+    <div class="hero-left">
+      <div class="hero-eyebrow eyebrow fade-up">40+ Years of Sacred Practice · Ongole, AP</div>
+      <h1 class="hero-title fade-up">Sidhanti Sri</h1>
+      <span class="hero-title-sub fade-up">Sivaprasad</span>
+      <p class="hero-telugu fade-up">మీ జీవితానికి జ్యోతిష్య మార్గదర్శనం</p>
+      <p class="hero-desc fade-up">
+        "Four decades of wisdom — guiding thousands of families through marriage, home, career and life's most sacred decisions."
+      </p>
+      <div class="hero-actions fade-up">
+        <a href="contact.html" class="btn btn-gold">Book a Consultation</a>
+        <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-outline">💬 WhatsApp Now</a>
+      </div>
+      <div class="hero-stats fade-up">
+        <div>
+          <div class="hero-stat-num">40+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">5,000+</div>
+          <div class="hero-stat-label">Families Guided</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">500+</div>
+          <div class="hero-stat-label">Vastu Projects</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-vr"></div>
+
+    <!-- Right services list -->
+    <div class="hero-right">
+      <div class="hero-services-label eyebrow fade-up">Services Offered</div>
+      <div class="hero-services-list">
+        <a href="vastu.html" class="hero-service-row fade-up">
+          <div class="hero-srv-num">01</div>
+          <div class="hero-srv-body">
+            <div class="hero-srv-name">Vastu Shastra</div>
+            <div class="hero-srv-telugu">వాస్తు శాస్త్రం</div>
+          </div>
+          <div class="hero-srv-arrow">→</div>
+        </a>
+        <a href="astrology.html" class="hero-service-row fade-up">
+          <div class="hero-srv-num">02</div>
+          <div class="hero-srv-body">
+            <div class="hero-srv-name">Vedic Astrology</div>
+            <div class="hero-srv-telugu">వేద జ్యోతిష్యం</div>
+          </div>
+          <div class="hero-srv-arrow">→</div>
+        </a>
+        <a href="matchmaking.html" class="hero-service-row fade-up">
+          <div class="hero-srv-num">03</div>
+          <div class="hero-srv-body">
+            <div class="hero-srv-name">Match Making</div>
+            <div class="hero-srv-telugu">వివాహ పొంతన</div>
+          </div>
+          <div class="hero-srv-arrow">→</div>
+        </a>
+        <a href="muhurtham.html" class="hero-service-row fade-up">
+          <div class="hero-srv-num">04</div>
+          <div class="hero-srv-body">
+            <div class="hero-srv-name">Muhurtham</div>
+            <div class="hero-srv-telugu">శుభ ముహూర్తం</div>
+          </div>
+          <div class="hero-srv-arrow">→</div>
+        </a>
+        <a href="numerology.html" class="hero-service-row fade-up">
+          <div class="hero-srv-num">05</div>
+          <div class="hero-srv-body">
+            <div class="hero-srv-name">Numerology</div>
+            <div class="hero-srv-telugu">సంఖ్యా శాస్త్రం</div>
+          </div>
+          <div class="hero-srv-arrow">→</div>
+        </a>
+        <a href="contact.html" class="hero-service-row fade-up">
+          <div class="hero-srv-num">06</div>
+          <div class="hero-srv-body">
+            <div class="hero-srv-name">NRI Online Consultations</div>
+            <div class="hero-srv-telugu">విదేశీ సేవలు</div>
+          </div>
+          <div class="hero-srv-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Vastu Shastra</span>
+      <span class="marquee-item">Vedic Astrology</span>
+      <span class="marquee-item">Match Making</span>
+      <span class="marquee-item">Muhurtham</span>
+      <span class="marquee-item">Numerology</span>
+      <span class="marquee-item">NRI Consultations</span>
+      <span class="marquee-item">South Indian Jyotishya</span>
+      <span class="marquee-item">40+ Years of Practice</span>
+      <span class="marquee-item">Vastu Shastra</span>
+      <span class="marquee-item">Vedic Astrology</span>
+      <span class="marquee-item">Match Making</span>
+      <span class="marquee-item">Muhurtham</span>
+      <span class="marquee-item">Numerology</span>
+      <span class="marquee-item">NRI Consultations</span>
+      <span class="marquee-item">South Indian Jyotishya</span>
+      <span class="marquee-item">40+ Years of Practice</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid fade-up">
+        <div>
+          <div class="about-photo-frame">
+            <img src="images/sivaprasad.jpg" alt="Sidhanti Sri Sivaprasad"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="about-photo-placeholder">🧑‍🏫</div>
+            <div class="about-photo-caption">Sidhanti Sri Sivaprasad · Ongole</div>
+            <div class="about-years-badge">
+              <div class="about-years-num">40+</div>
+              <div class="about-years-text">Years of<br/>Practice</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-vr"></div>
+
+        <div class="about-content">
+          <div class="eyebrow" style="margin-bottom:1rem">About</div>
+          <h2>A Life in Service of<br/>Sacred Knowledge</h2>
+          <div class="rule"></div>
+          <p class="editorial">
+            "The title Sidhanti is not merely a name — it is a recognition of mastery in the classical Siddhanta texts of Vedic astrology, earned through decades of rigorous study and practice."
+          </p>
+          <p class="body-text">
+            Sidhanti Sri Sivaprasad has dedicated over four decades to the sacred sciences of Jyotishya and Vastu Shastra. Rooted in the South Indian Siddhanta tradition — using the classical square chart and the Nirayana sidereal system — his readings carry the weight of lineage-based learning.
+          </p>
+          <p class="body-text">
+            His expertise in Vastu Shastra is particularly renowned, having transformed hundreds of homes, offices and commercial establishments. For NRI families, he offers full video consultations — authentic South Indian guidance, wherever you are in the world.
+          </p>
+          <div class="about-facts">
+            <div class="fact-item">
+              <div class="fact-label">Tradition</div>
+              <div class="fact-value">South Indian Siddhanta Jyotishya</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">Location</div>
+              <div class="fact-value">Ongole, Andhra Pradesh</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">Languages</div>
+              <div class="fact-value">Telugu · English</div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-label">Consultation</div>
+              <div class="fact-value">In-Person · Phone · Video</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.5rem;">
+            <a href="about.html" class="btn btn-outline">Read Full Profile</a>
+            <a href="contact.html" class="btn btn-accent">Consult Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Band -->
+  <div class="stats-band fade-up">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-col">
+          <div class="stat-number">40+</div>
+          <div class="stat-rule"></div>
+          <div class="stat-label">Years of Practice</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-number">5,000+</div>
+          <div class="stat-rule"></div>
+          <div class="stat-label">Families Guided</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-number">500+</div>
+          <div class="stat-rule"></div>
+          <div class="stat-label">Vastu Consultations</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-number">10+</div>
+          <div class="stat-rule"></div>
+          <div class="stat-label">Cities Served</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="eyebrow">What We Offer</div>
+        <h2>Services</h2>
+        <div class="rule" style="max-width:180px"></div>
+        <p class="subtext">Four decades of wisdom across six sacred disciplines — each consultation personal, detailed and grounded in classical tradition.</p>
+      </div>
+      <div class="services-layout fade-up">
+
+        <div class="service-entry">
+          <div class="srv-num-label">01</div>
+          <div class="srv-title">Vastu Shastra</div>
+          <div class="srv-telugu">వాస్తు శాస్త్రం</div>
+          <p class="srv-desc">Expert consultation for homes, offices, factories and commercial spaces. Site visits across AP and online for NRI clients. Corrections without demolition.</p>
+          <div class="srv-footer"><a href="vastu.html" class="srv-link">View Details →</a></div>
+        </div>
+
+        <div class="service-entry">
+          <div class="srv-num-label">02</div>
+          <div class="srv-title">Vedic Astrology</div>
+          <div class="srv-telugu">వేద జ్యోతిష్యం</div>
+          <p class="srv-desc">Classical South Indian Kundli reading, planetary analysis, Dosham assessment, Dasha predictions, annual forecasts and life guidance.</p>
+          <div class="srv-footer"><a href="astrology.html" class="srv-link">View Details →</a></div>
+        </div>
+
+        <div class="service-entry">
+          <div class="srv-num-label">03</div>
+          <div class="srv-title">Match Making</div>
+          <div class="srv-telugu">వివాహ పొంతన</div>
+          <p class="srv-desc">Thorough horoscope compatibility covering all 10 poruthams, Dosham analysis and remedies. Trusted by generations for marriage decisions.</p>
+          <div class="srv-footer"><a href="matchmaking.html" class="srv-link">View Details →</a></div>
+        </div>
+
+        <div class="service-entry">
+          <div class="srv-num-label">04</div>
+          <div class="srv-title">Muhurtham</div>
+          <div class="srv-telugu">శుభ ముహూర్తం</div>
+          <p class="srv-desc">Auspicious timing for marriage, Griha Pravesham, business launch, naming ceremony, travel and all major life events.</p>
+          <div class="srv-footer"><a href="muhurtham.html" class="srv-link">View Details →</a></div>
+        </div>
+
+        <div class="service-entry">
+          <div class="srv-num-label">05</div>
+          <div class="srv-title">Numerology</div>
+          <div class="srv-telugu">సంఖ్యా శాస్త్రం</div>
+          <p class="srv-desc">Name analysis, Life Path number, lucky numbers and name corrections for individuals, newborns and businesses.</p>
+          <div class="srv-footer"><a href="numerology.html" class="srv-link">View Details →</a></div>
+        </div>
+
+        <div class="service-entry">
+          <div class="srv-num-label">06</div>
+          <div class="srv-title">NRI Online Consultations</div>
+          <div class="srv-telugu">విదేశీ సేవలు</div>
+          <p class="srv-desc">Complete consultations via video for South Indian families in the Gulf, USA, UK, Australia, Singapore and beyond. Authentic guidance, anywhere.</p>
+          <div class="srv-footer"><a href="contact.html" class="srv-link">Book Now →</a></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Consult -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="eyebrow">Process</div>
+        <h2>How to Consult</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="steps-layout fade-up">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <h3>Reach Out</h3>
+          <p class="body-text">Call, WhatsApp or fill the booking form. Share your name, service required and preferred date. We respond within a few hours.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <h3>Share Your Details</h3>
+          <p class="body-text">Send date, time and place of birth before the appointment. For Vastu, share the floor plan and property address via WhatsApp.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <h3>Receive Guidance</h3>
+          <p class="body-text">Meet in person at Ongole, or consult via video call from anywhere. A detailed analysis, predictions and remedies are provided.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="eyebrow">Testimonials</div>
+        <h2>What Families Say</h2>
+        <div class="rule" style="max-width:200px"></div>
+        <p class="subtext telugu" style="font-size:0.92rem">మా క్లయింట్ల అభిప్రాయాలు</p>
+      </div>
+      <div class="testimonials-grid fade-up">
+        <div class="testimonial-item">
+          <div class="t-quote-mark">"</div>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"We consulted Sidhanti Sri Sivaprasad for our daughter's match making. His analysis was incredibly thorough and the marriage has been wonderfully harmonious. We are deeply grateful."</p>
+          <div class="t-author">
+            <div class="t-avatar">R</div>
+            <div>
+              <div class="t-name">Ramaiah &amp; Family</div>
+              <div class="t-location">Ongole, AP</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-item">
+          <div class="t-quote-mark">"</div>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"His Vastu guidance for our new office in Hyderabad was practical and clear. The positive changes in our business after implementing his suggestions have been remarkable."</p>
+          <div class="t-author">
+            <div class="t-avatar">S</div>
+            <div>
+              <div class="t-name">Suresh Kumar</div>
+              <div class="t-location">Hyderabad, TS</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-item">
+          <div class="t-quote-mark">"</div>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Being in Dubai, I was worried about finding an authentic Telugu astrologer. The video consultation was as thorough as in-person. His knowledge and patience were exceptional."</p>
+          <div class="t-author">
+            <div class="t-avatar">P</div>
+            <div>
+              <div class="t-name">Padmavathi</div>
+              <div class="t-location">Dubai, UAE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="eyebrow">Coverage</div>
+        <h2>Areas We Serve</h2>
+        <div class="rule"></div>
+        <p class="subtext">In-person site visits and online video consultations worldwide</p>
+      </div>
+      <div class="areas-flex fade-up" style="justify-content:center">
+        <span class="area-chip primary">📍 Ongole</span>
+        <span class="area-chip">Guntur</span>
+        <span class="area-chip">Nellore</span>
+        <span class="area-chip">Prakasam District</span>
+        <span class="area-chip">Vijayawada</span>
+        <span class="area-chip">Hyderabad</span>
+        <span class="area-chip">Visakhapatnam</span>
+        <span class="area-chip">Bangalore</span>
+        <span class="area-chip">Chennai</span>
+        <span class="area-chip">🌐 Gulf Countries</span>
+        <span class="area-chip">🌐 USA · Canada</span>
+        <span class="area-chip">🌐 UK · Europe</span>
+        <span class="area-chip">🌐 Singapore · Australia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band fade-up">
+    <div class="container">
+      <div class="eyebrow" style="justify-content:center; opacity:0.5">Begin Your Journey</div>
+      <h2 style="margin-top:0.75rem">Seek Clarity. Find Direction.</h2>
+      <div class="cta-rule"></div>
+      <p class="cta-telugu">మీ జీవితంలో శాంతి మరియు సుభిక్షం కోసం నేడే సంప్రదించండి</p>
+      <p class="cta-desc">"Whether you seek guidance on a life decision, wish to harmonise your home through Vastu, or need the right moment to begin — Sidhanti Sri Sivaprasad is here."</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold">📅 Book a Consultation</a>
+        <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-whatsapp">💬 WhatsApp Now</a>
+        <a href="tel:+91XXXXXXXXXX" class="btn btn-outline" style="border-color:rgba(240,232,255,0.3);color:rgba(240,232,255,0.7)">📞 Call Directly</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">🔱 Gayatri Jyothishalayam</div>
+          <div class="footer-brand-telugu telugu">గాయత్రీ జ్యోతిష్యాలయం</div>
+          <p class="footer-brand-desc">Sidhanti Sri Sivaprasad brings over 40 years of sacred learning in South Indian Vedic Astrology, Vastu Shastra, Muhurtham, Match Making and Numerology — guiding families towards peace, prosperity and purpose.</p>
+        </div>
+        <div>
+          <div class="footer-col-label">Services</div>
+          <div class="footer-links">
+            <a href="vastu.html">Vastu Shastra</a>
+            <a href="astrology.html">Vedic Astrology</a>
+            <a href="matchmaking.html">Match Making</a>
+            <a href="muhurtham.html">Muhurtham</a>
+            <a href="numerology.html">Numerology</a>
+            <a href="contact.html">NRI Consultations</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Quick Links</div>
+          <div class="footer-links">
+            <a href="about.html">About Sidhanti</a>
+            <a href="contact.html">Book Consultation</a>
+            <a href="index-themeB.html">Classic Theme</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-label">Contact</div>
+          <div class="footer-contact-row">
+            <span class="footer-contact-icon">📍</span>
+            <span class="footer-contact-text">Ongole, Andhra Pradesh<br/>[Full address — to be added]</span>
+          </div>
+          <div class="footer-contact-row">
+            <span class="footer-contact-icon">📞</span>
+            <span class="footer-contact-text"><a href="tel:+91XXXXXXXXXX">+91-XXXX-XXXXXX</a></span>
+          </div>
+          <div class="footer-contact-row">
+            <span class="footer-contact-icon">💬</span>
+            <span class="footer-contact-text"><a href="https://wa.me/91XXXXXXXXXX">WhatsApp Consultation</a></span>
+          </div>
+          <div class="footer-contact-row">
+            <span class="footer-contact-icon">📧</span>
+            <span class="footer-contact-text"><a href="mailto:gayatrijyothishalayam@gmail.com">gayatrijyothishalayam@gmail.com</a></span>
+          </div>
+          <div class="footer-contact-row">
+            <span class="footer-contact-icon">⏰</span>
+            <span class="footer-contact-text">Mon–Sat: 9:00 AM – 7:00 PM IST</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Gayatri Jyothishalayam. All rights reserved.</span>
+        <span>Sidhanti Sri Sivaprasad · Ongole, Andhra Pradesh</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/91XXXXXXXXXX" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+  <script>
+  (function() {
+    'use strict';
+
+    /* ── Theme ── */
+    const STORAGE_KEY = 'gj-theme';
+    const root = document.documentElement;
+
+    function getCurrentTheme() {
+      return localStorage.getItem(STORAGE_KEY) || 'dark';
+    }
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem(STORAGE_KEY, theme);
+      if (theme === 'light') {
+        stopGalaxy();
+        startPowderTrail();
+      } else {
+        stopPowderTrail();
+        initGalaxy();
+      }
+    }
+
+    /* ── Galaxy Canvas (dark mode) ── */
+    const STAR_COLS = [
+      [210,235,255], // blue-white  (O/B type)
+      [248,250,255], // pure white  (A type)
+      [255,255,228], // warm white  (F/G type)
+      [255,240,195], // golden      (G type)
+      [255,215,162], // orange      (K type)
+      [200,220,255], // pale blue
+      [255,205,198], // pale red    (M type)
+    ];
+    let gCvs=null, gCtx=null, gStars=[], gRaf=null, gActive=false, gTime=0;
+
+    function mkStar(W, H) {
+      const inBand = Math.random() < 0.42;
+      let x, y;
+      if (inBand) {
+        const t  = Math.random();
+        const cx = W * t;
+        const cy = H * 0.48 + (cx - W * 0.5) * Math.tan(28 * Math.PI / 180);
+        const sp = 90 + Math.random() * 180;
+        const pa = 28 * Math.PI / 180 + Math.PI * 0.5;
+        const of = (Math.random() - 0.5) * 2 * sp;
+        x = Math.max(0, Math.min(W, cx + Math.cos(pa) * of));
+        y = Math.max(0, Math.min(H, cy + Math.sin(pa) * of));
+      } else {
+        x = Math.random() * W; y = Math.random() * H;
+      }
+      const bright = Math.random() < 0.04;
+      const ci     = Math.random() < 0.55 ? Math.floor(Math.random() * 2) : Math.floor(Math.random() * STAR_COLS.length);
+      const r      = bright ? 1.6 + Math.random() * 1.7 : 0.35 + Math.random() * 1.0;
+      const bA     = bright ? 0.75 + Math.random() * 0.25 : (inBand ? 0.20 + Math.random() * 0.45 : 0.12 + Math.random() * 0.40);
+      return { x, y, r, col: STAR_COLS[ci], bA, alpha: bA,
+               spd: 0.004 + Math.random() * 0.018,
+               phase: Math.random() * Math.PI * 2,
+               amp: 0.12 + Math.random() * 0.28, bright };
+    }
+
+    function buildStars() {
+      const W = gCvs.width, H = gCvs.height;
+      gStars = [];
+      for (let i = 0; i < 680; i++) gStars.push(mkStar(W, H));
+    }
+
+    function drawGalaxyFrame() {
+      if (!gActive) return;
+      gRaf = requestAnimationFrame(drawGalaxyFrame);
+      gTime++;
+      const W = gCvs.width, H = gCvs.height;
+      gCtx.clearRect(0, 0, W, H);
+      for (const s of gStars) {
+        s.alpha = Math.max(0, Math.min(1, s.bA + Math.sin(gTime * s.spd + s.phase) * s.amp * s.bA));
+        const [r,g,b] = s.col;
+        if (s.bright) {
+          const grd = gCtx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 5);
+          grd.addColorStop(0,   `rgba(${r},${g},${b},${(s.alpha * 0.55).toFixed(3)})`);
+          grd.addColorStop(0.35,`rgba(${r},${g},${b},${(s.alpha * 0.20).toFixed(3)})`);
+          grd.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+          gCtx.beginPath();
+          gCtx.arc(s.x, s.y, s.r * 5, 0, Math.PI * 2);
+          gCtx.fillStyle = grd; gCtx.fill();
+        }
+        gCtx.beginPath();
+        gCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        gCtx.fillStyle = `rgba(${r},${g},${b},${s.alpha.toFixed(3)})`;
+        gCtx.fill();
+      }
+    }
+
+    function initGalaxy() {
+      if (!gCvs) {
+        gCvs = document.createElement('canvas');
+        gCvs.id = 'galaxy-canvas';
+        gCvs.style.cssText = 'position:fixed;inset:0;z-index:-2;pointer-events:none;';
+        document.body.appendChild(gCvs);
+        window.addEventListener('resize', () => {
+          if (!gActive) return;
+          gCvs.width = window.innerWidth; gCvs.height = window.innerHeight;
+          buildStars();
+        });
+      }
+      gCvs.width  = window.innerWidth;
+      gCvs.height = window.innerHeight;
+      gCvs.style.display = 'block';
+      gCtx = gCvs.getContext('2d');
+      buildStars();
+      gActive = true; gTime = 0;
+      drawGalaxyFrame();
+    }
+
+    function stopGalaxy() {
+      gActive = false;
+      if (gRaf) { cancelAnimationFrame(gRaf); gRaf = null; }
+      if (gCvs) gCvs.style.display = 'none';
+    }
+
+    /* ── Spotlight (hero) ── */
+    const hero      = document.getElementById('hero');
+    const spotlight = document.getElementById('hero-spotlight');
+    const lingam    = hero ? hero.querySelector('.lingam-wrap') : null;
+
+    if (hero && spotlight) {
+      hero.addEventListener('mousemove', function(e) {
+        if (getCurrentTheme() !== 'dark') return;
+        const rect = hero.getBoundingClientRect();
+        const mx = ((e.clientX - rect.left) / rect.width  * 100).toFixed(2) + '%';
+        const my = ((e.clientY - rect.top)  / rect.height * 100).toFixed(2) + '%';
+        spotlight.style.background =
+          `radial-gradient(circle 200px at ${mx} ${my}, transparent 0%, rgba(8,11,26,0.92) 100%)`;
+        if (lingam) {
+          const cx   = rect.left + rect.width  / 2;
+          const cy   = rect.top  + rect.height / 2;
+          const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+          const prox = Math.max(0, 1 - dist / 380);
+          lingam.style.opacity = (0.015 + prox * 0.32).toFixed(3);
+        }
+      });
+      hero.addEventListener('mouseleave', function() {
+        if (lingam) lingam.style.opacity = '0.015';
+      });
+    }
+
+    /* ── Powder trail (light mode) ── */
+    const canvas  = document.getElementById('powder-canvas');
+    const COLORS  = ['#FFD700', '#FFA500', '#FF4400', '#CC2200'];
+    let particles = [];
+    let rafId     = null;
+    let trailOn   = false;
+
+    function resizeCanvas() {
+      if (!canvas) return;
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function spawnParticles(x, y) {
+      for (let i = 0; i < 4; i++) {
+        particles.push({
+          x, y,
+          vx: (Math.random() - 0.5) * 3,
+          vy: Math.random() * -2 - 0.5,
+          r:  2 + Math.random() * 2,
+          alpha: 0.85,
+          color: COLORS[Math.floor(Math.random() * COLORS.length)]
+        });
+      }
+      if (particles.length > 300) particles.splice(0, particles.length - 300);
+    }
+
+    function drawParticles() {
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles = particles.filter(p => p.alpha > 0);
+      for (const p of particles) {
+        p.vy    += 0.12;
+        p.x     += p.vx;
+        p.y     += p.vy;
+        p.alpha -= 0.022;
+        if (p.alpha <= 0) continue;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle   = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      if (trailOn) rafId = requestAnimationFrame(drawParticles);
+    }
+
+    function onMouseMove(e) {
+      if (getCurrentTheme() === 'light') spawnParticles(e.clientX, e.clientY);
+    }
+
+    function startPowderTrail() {
+      if (trailOn) return;
+      trailOn = true;
+      document.addEventListener('mousemove', onMouseMove);
+      rafId = requestAnimationFrame(drawParticles);
+    }
+
+    function stopPowderTrail() {
+      trailOn = false;
+      document.removeEventListener('mousemove', onMouseMove);
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      particles = [];
+    }
+
+    /* ── Toggle button ── */
+    document.getElementById('themeToggle')?.addEventListener('click', function() {
+      applyTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+    });
+
+    /* ── Mobile nav ── */
+    const hamburger = document.getElementById('hamburger');
+    const navList   = document.getElementById('navList');
+    hamburger?.addEventListener('click', () => navList.classList.toggle('open'));
+    navList?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+    navList?.querySelectorAll('.nav-item').forEach(item => {
+      item.querySelector('.nav-link')?.addEventListener('click', e => {
+        if (window.innerWidth <= 768 && item.querySelector('.dropdown')) {
+          e.preventDefault();
+          item.classList.toggle('open');
+        }
+      });
+    });
+
+    /* ── Fade-up ── */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 65);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+    /* ── Init ── */
+    applyTheme(getCurrentTheme());
+
+  })();
+  </script>
+</body>
+</html>
