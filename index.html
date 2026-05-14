@@ -25,7 +25,7 @@
   --gold-glow:   rgba(201,168,76,0.30);
   --accent:      #C9A84C;
   --text-h:      #F0E8FF;
-  --text:        rgba(240,232,255,0.72);
+  --text:        rgba(240,232,255,0.85);
   --text-muted:  rgba(240,232,255,0.58);
   --border:      rgba(201,168,76,0.10);
   --border-soft: rgba(201,168,76,0.06);
@@ -382,10 +382,10 @@ h4 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transfor
 .hero-service-row:last-child { border-bottom: none; }
 .hero-srv-num {
   font-family: var(--font-h); font-size: 1.5rem; font-weight: 700;
-  color: var(--gold-dim); line-height: 1; min-width: 36px;
-  transition: color 0.25s;
+  color: rgba(201,168,76,0.55); line-height: 1; min-width: 36px;
+  transition: color 0.25s, opacity 0.25s;
 }
-.hero-service-row:hover .hero-srv-num { color: var(--gold); opacity: 0.55; }
+.hero-service-row:hover .hero-srv-num { color: var(--gold); opacity: 1; }
 .hero-srv-body { flex: 1; }
 .hero-srv-name { font-family: var(--font-h); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-h); }
 .hero-srv-telugu { font-family: var(--font-tel); font-size: 0.68rem; color: var(--text-muted); margin-top: 0.1rem; }
@@ -501,7 +501,7 @@ h4 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transfor
   transition: transform 0.3s ease;
 }
 .service-entry:hover::before { transform: scaleX(1); }
-.srv-num-label { font-family: var(--font-h); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.45; }
+.srv-num-label { font-family: var(--font-h); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.75; }
 .srv-title { font-family: var(--font-h); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-h); }
 .srv-telugu { font-family: var(--font-tel); font-size: 0.9rem; color: var(--gold); opacity: 0.85; }
 .srv-desc { font-family: var(--font-b); font-size: 0.93rem; color: var(--text-muted); line-height: 1.8; }
@@ -533,7 +533,7 @@ h4 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transfor
 }
 .step-num {
   font-family: var(--font-h); font-size: 3.8rem; font-weight: 700;
-  color: var(--gold); opacity: 0.08; line-height: 1; margin-bottom: 1.5rem;
+  color: var(--gold); opacity: 0.30; line-height: 1; margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
 .step-item h3 { color: var(--text-h); margin-bottom: 0.75rem; font-size: 0.75rem; }
@@ -606,7 +606,7 @@ h4 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transfor
   padding: 5rem 0 3.5rem; border-bottom: 1px solid rgba(201,168,76,0.06);
 }
 .footer-brand-name { font-family: var(--font-h); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #F0E8FF; }
-.footer-brand-telugu { font-family: var(--font-tel); font-size: 0.7rem; color: rgba(240,232,255,0.2); margin-top: 0.15rem; }
+.footer-brand-telugu { font-family: var(--font-tel); font-size: 0.7rem; color: rgba(240,232,255,0.5); margin-top: 0.15rem; }
 .footer-brand-desc { font-family: var(--font-b); font-size: 0.88rem; color: rgba(240,232,255,0.28); line-height: 1.85; margin: 1.2rem 0; }
 .footer-col-label { font-family: var(--font-h); font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.8; margin-bottom: 1.2rem; }
 .footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
